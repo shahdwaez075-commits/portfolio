@@ -35,6 +35,13 @@
         .about-content { max-width: 800px; font-size: 1.1rem; color: #ccc; line-height: 1.8; }
         .about-content p { margin-bottom: 15px; }
 
+        /* Skills Grid */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .skill-card { background: #161616; border: 1px solid #222; border-radius: 8px; padding: 20px; text-align: center; transition: 0.3s; }
+        .skill-card:hover { border-color: #3498db; transform: translateY(-3px); }
+        .skill-card i { font-size: 2rem; color: #3498db; margin-bottom: 10px; }
+        .skill-card p { font-weight: 600; color: #fff; }
+
         /* Projects Grid */
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .project-card { background: #161616; border: 1px solid #222; border-radius: 10px; padding: 25px; transition: 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
@@ -62,6 +69,7 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -84,6 +92,31 @@
             <p>I am a Data Analyst who enjoys digging into messy datasets, uncovering patterns, and turning numbers into clear, meaningful stories. I am passionate about understanding what the data is really saying and finding insights that make a difference.</p>
             <p>I use SQL, Excel, Power BI, and data visualization to analyze data, build interactive dashboards, and solve real-world problems. I am particularly interested in understanding the "why" behind the numbers—going beyond what happened to discover the trends, relationships, and insights that actually matter.</p>
             <p>I believe great analysis is not just about presenting numbers, but about turning raw data into actionable insights and better decisions. I'm continually learning, experimenting with new datasets, and building projects that strengthen my analytical thinking.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">My Skills</h2>
+        <p class="section-subtitle">Technologies and tools I use to analyze data</p>
+        
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fa-solid fa-database"></i>
+                <p>SQL & Databases</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-chart-pie"></i>
+                <p>Power BI & DAX</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-file-excel"></i>
+                <p>Advanced Excel</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-brands fa-python"></i>
+                <p>Python</p>
+            </div>
         </div>
     </section>
 

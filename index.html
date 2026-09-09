@@ -3,112 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Data Analyst</title>
+    <title>Shahd Zakaria Abdelrahman waez | Data Analyst</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
         body { background-color: #0b0b0b; color: #ffffff; line-height: 1.6; }
-        
-        header { position: fixed; top: 0; width: 100%; background: rgba(11, 11, 11, 0.95); display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; z-index: 1000; border-bottom: 1px solid #1f1f1f; }
-        .logo { font-weight: 700; font-size: 1.2rem; color: #fff; }
+
+        /* Navbar */
+        header { position: fixed; top: 0; width: 100%; background: rgba(11, 11, 11, 0.95); display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; z-index: 1000; border-bottom: 1px solid #222; }
+        .logo { font-weight: 700; font-size: 1.3rem; color: #fff; text-decoration: none; }
         nav ul { display: flex; list-style: none; gap: 30px; }
         nav ul li a { color: #bbb; text-decoration: none; font-size: 0.95rem; transition: 0.3s; }
-        nav ul li a:hover { color: #f39c12; }
+        nav ul li a:hover { color: #3498db; }
 
-        section { padding: 100px 8% 60px; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+        /* Hero Section */
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; background: radial-gradient(circle, #1a1a1a 0%, #0b0b0b 100%); }
+        .hero h1 { font-size: 3rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
+        .hero h2 { font-size: 1.5rem; font-weight: 400; color: #3498db; margin-bottom: 20px; }
+        .hero p { font-size: 1rem; color: #aaa; max-width: 600px; margin-bottom: 30px; }
+        .btn { display: inline-block; padding: 12px 30px; background: #3498db; color: #fff; border-radius: 5px; text-decoration: none; font-weight: 600; transition: 0.3s; }
+        .btn:hover { background: #2980b9; }
 
-        .hero-text h3 { font-size: 1.5rem; color: #bbb; margin-bottom: 5px; }
-        .hero-text h1 { font-size: 3.5rem; font-weight: 700; color: #f39c12; margin-bottom: 10px; }
-        .hero-text p { font-size: 1.2rem; color: #888; }
+        /* General Section Styling */
+        section { padding: 100px 8% 80px; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+        .section-title { font-size: 2.2rem; margin-bottom: 10px; font-weight: 700; border-left: 4px solid #3498db; padding-left: 15px; }
+        .section-subtitle { color: #888; font-size: 1rem; margin-bottom: 50px; }
 
-        .section-title { font-size: 2.5rem; margin-bottom: 30px; font-weight: 700; border-left: 4px solid #f39c12; padding-left: 15px; }
-        
-        .about-text { max-width: 700px; color: #aaa; font-size: 1.1rem; }
+        /* About Section */
+        .about-content { max-width: 800px; font-size: 1.1rem; color: #ccc; line-height: 1.8; }
+        .about-content p { margin-bottom: 15px; }
 
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 20px; }
-        .skill-card { background: #161616; border: 1px solid #222; padding: 25px; text-align: center; border-radius: 10px; transition: 0.3s; }
-        .skill-card:hover { border-color: #f39c12; transform: translateY(-5px); }
-        .skill-card i { font-size: 2.5rem; color: #f39c12; margin-bottom: 10px; }
-        .skill-card p { font-size: 0.9rem; color: #ddd; }
+        /* Projects Grid */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .project-card { background: #161616; border: 1px solid #222; border-radius: 10px; padding: 25px; transition: 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
+        .project-card:hover { transform: translateY(-5px); border-color: #3498db; }
+        .project-card h3 { font-size: 1.3rem; margin-bottom: 15px; color: #fff; }
+        .project-card p { color: #aaa; font-size: 0.95rem; margin-bottom: 20px; }
+        .project-tech { font-size: 0.85rem; color: #3498db; font-weight: 600; margin-bottom: 20px; }
 
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .project-card { background: #161616; border: 1px solid #222; border-radius: 10px; overflow: hidden; transition: 0.3s; }
-        .project-card:hover { border-color: #f39c12; }
-        .project-info { padding: 25px; }
-        .project-info h4 { margin-bottom: 10px; font-size: 1.2rem; color: #fff; }
-        .project-info p { color: #888; font-size: 0.9rem; }
+        /* Contact Section */
+        .contact-container { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
+        .contact-btn { display: flex; align-items: center; gap: 10px; padding: 15px 25px; background: #161616; border: 1px solid #333; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.3s; }
+        .contact-btn:hover { background: #3498db; border-color: #3498db; }
+        .contact-btn i { font-size: 1.2rem; }
 
-        .contact-box { background: #161616; border: 1px solid #222; padding: 40px; border-radius: 10px; text-align: center; }
-        .contact-box p { color: #888; margin-bottom: 20px; }
-        .btn { display: inline-block; background: #f39c12; color: #000; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: 600; transition: 0.3s; }
-        .btn:hover { background: #e67e22; }
+        /* Footer */
+        footer { text-align: center; padding: 30px; background: #080808; color: #666; font-size: 0.9rem; border-top: 1px solid #1a1a1a; }
     </style>
 </head>
 <body>
 
+    <!-- Header / Navbar -->
     <header>
-        <div class="logo">Your Name</div>
+        <a href="#" class="logo">Shahd Zakaria</a>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="home">
-        <div class="hero-text">
-            <h3>HELLO!</h3>
-            <h1>I'm Your Name</h1>
-            <p>A Data Analyst</p>
-        </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Shahd Zakaria Abdelrahman waez</h1>
+        <h2>Data Analyst</h2>
+        <p>Turning complex data into clear, actionable insights using Power BI, SQL, and advanced analytics tools.</p>
+        <a href="#projects" class="btn">View My Work</a>
     </section>
 
+    <!-- About Section -->
     <section id="about">
         <h2 class="section-title">About Me</h2>
-        <p class="about-text">I'm a Data Analyst who enjoys digging into messy datasets, uncovering patterns, and turning numbers into clear, meaningful stories. I'm passionate about understanding what the data is really saying and finding insights that make a difference.</p>
-    </section>
-
-    <section id="skills">
-        <h2 class="section-title">My Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-card"><i class="fa-brands fa-python"></i><p>Python</p></div>
-            <div class="skill-card"><i class="fa-solid fa-database"></i><p>SQL</p></div>
-            <div class="skill-card"><i class="fa-solid fa-chart-pie"></i><p>Power BI</p></div>
-            <div class="skill-card"><i class="fa-solid fa-file-excel"></i><p>Excel</p></div>
+        <p class="section-subtitle">Get to know more about my background</p>
+        <div class="about-content">
+            <p>I am a Data Analyst who enjoys digging into messy datasets, uncovering patterns, and turning numbers into clear, meaningful stories. I am passionate about understanding what the data is really saying and finding insights that make a difference.</p>
+            <p>I use SQL, Excel, Power BI, and data visualization to analyze data, build interactive dashboards, and solve real-world problems. I am particularly interested in understanding the "why" behind the numbers—going beyond what happened to discover the trends, relationships, and insights that actually matter.</p>
+            <p>I believe great analysis is not just about presenting numbers, but about turning raw data into actionable insights and better decisions. I'm continually learning, experimenting with new datasets, and building projects that strengthen my analytical thinking.</p>
         </div>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects">
         <h2 class="section-title">My Projects</h2>
+        <p class="section-subtitle">A selection of data analytics projects using Python, SQL, Power BI, and Excel.</p>
+        
         <div class="projects-grid">
+            <!-- Project 1 -->
             <div class="project-card">
-                <div class="project-info">
-                    <h4>Insurance Analytics Dashboard</h4>
-                    <p>Built an interactive Power BI dashboard combining performance with customer sentiment.</p>
+                <div>
+                    <h3>Adidas Sales Performance Dashboard</h3>
+                    <p>Built an interactive Power BI dashboard tracking sales volumes, profit margins, and regional retail performance trends.</p>
                 </div>
+                <div class="project-tech">Power BI | DAX | Data Visualization</div>
             </div>
+
+            <!-- Project 2 -->
             <div class="project-card">
-                <div class="project-info">
-                    <h4>Delivery Operations Analytics</h4>
-                    <p>Investigated delivery delays and shipping patterns using Python and SQL Server.</p>
+                <div>
+                    <h3>Kickstarter Projects Analysis</h3>
+                    <p>Designed a multi-page Power BI dashboard analyzing funding goals, pledged amounts, and project success rates.</p>
                 </div>
+                <div class="project-tech">Power BI | Data Modeling | Analytics</div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div>
+                    <h3>Super Store Sales & Profit Dashboard</h3>
+                    <p>Analyzed retail transactional data using SQL and Power BI to uncover customer segments, shipping modes, and profit optimization opportunities.</p>
+                </div>
+                <div class="project-tech">SQL | Power BI | Data Analysis</div>
             </div>
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact">
         <h2 class="section-title">Contact Me</h2>
-        <div class="contact-box">
-            <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
-            <a href="mailto:your.email@example.com" class="btn">Get In Touch</a>
+        <p class="section-subtitle">Let's connect and discuss opportunities</p>
+        <div class="contact-container">
+            <a href="mailto:shahdwaez075@gmail.com" class="contact-btn">
+                <i class="fas fa-envelope"></i> Email Me
+            </a>
+            <a href="https://www.linkedin.com/in/shahd-waez" target="_blank" class="contact-btn">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://wa.me/201151303384" target="_blank" class="contact-btn">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Shahd Zakaria Abdelrahman waez. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>

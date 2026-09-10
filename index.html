@@ -3,205 +3,1492 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shahd Zakaria Abdelrahman waez | Data Analyst</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
+    <title>Shahd Zakaria Abdelrahman Waez | Data Analyst</title>
+
+    <meta name="description"
+          content="Shahd Zakaria Abdelrahman Waez - Data Analyst Portfolio">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
-        body { background-color: #0b0b0b; color: #ffffff; line-height: 1.6; }
 
-        /* Navbar */
-        header { position: fixed; top: 0; width: 100%; background: rgba(11, 11, 11, 0.95); display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; z-index: 1000; border-bottom: 1px solid #222; }
-        .logo { font-weight: 700; font-size: 1.3rem; color: #fff; text-decoration: none; }
-        nav ul { display: flex; list-style: none; gap: 30px; }
-        nav ul li a { color: #bbb; text-decoration: none; font-size: 0.95rem; transition: 0.3s; }
-        nav ul li a:hover { color: #3498db; }
-
-        /* Hero Section */
-        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 120px 20px 60px; background: radial-gradient(circle, #1a1a1a 0%, #0b0b0b 100%); }
-        .hero-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid #3498db; margin-bottom: 20px; box-shadow: 0 0 20px rgba(52, 152, 219, 0.3); }
-        .hero h1 { font-size: 2.8rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
-        .hero h2 { font-size: 1.4rem; font-weight: 400; color: #3498db; margin-bottom: 20px; }
-        .hero p { font-size: 1rem; color: #aaa; max-width: 600px; margin-bottom: 30px; }
-        .btn { display: inline-block; padding: 12px 30px; background: #3498db; color: #fff; border-radius: 5px; text-decoration: none; font-weight: 600; transition: 0.3s; }
-        .btn:hover { background: #2980b9; }
-
-        /* General Section Styling */
-        section { padding: 100px 8% 80px; min-height: 90vh; display: flex; flex-direction: column; justify-content: center; }
-        .section-title { font-size: 2.2rem; margin-bottom: 10px; font-weight: 700; border-left: 4px solid #3498db; padding-left: 15px; }
-        .section-subtitle { color: #888; font-size: 1rem; margin-bottom: 50px; }
-
-        /* About Section Layout with Image */
-        .about-container { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
-        .about-text { flex: 1; min-width: 300px; font-size: 1.05rem; color: #ccc; line-height: 1.8; }
-        .about-text p { margin-bottom: 15px; }
-        .about-image-wrapper { flex-shrink: 0; text-align: center; }
-        .about-profile-img { width: 220px; height: 220px; border-radius: 15px; object-fit: cover; border: 3px solid #3498db; box-shadow: 0 10px 30px rgba(52, 152, 219, 0.2); }
-
-        /* Skills Grid */
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; max-width: 700px; }
-        .skill-card { background: #161616; border: 1px solid #222; border-radius: 12px; padding: 25px 10px; text-align: center; transition: 0.3s; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
-        .skill-card:hover { border-color: #3498db; transform: translateY(-5px); background: #1a1a1a; }
-        .skill-card img { width: 45px; height: 45px; object-fit: contain; }
-        .skill-card p { font-weight: 600; color: #fff; font-size: 0.95rem; }
-
-        /* Projects Grid with Images */
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .project-card { background: #161616; border: 1px solid #222; border-radius: 10px; overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
-        .project-card:hover { transform: translateY(-5px); border-color: #3498db; }
-        .project-img { width: 100%; height: 180px; object-fit: cover; border-bottom: 1px solid #222; }
-        .project-content { padding: 25px; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; }
-        .project-card h3 { font-size: 1.3rem; margin-bottom: 15px; color: #fff; }
-        .project-card p { color: #aaa; font-size: 0.95rem; margin-bottom: 20px; }
-        .project-tech { font-size: 0.85rem; color: #3498db; font-weight: 600; margin-top: auto; }
-
-        /* Contact Section */
-        .contact-container { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
-        .contact-btn { display: flex; align-items: center; gap: 10px; padding: 15px 25px; background: #161616; border: 1px solid #333; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.3s; }
-        .contact-btn:hover { background: #3498db; border-color: #3498db; }
-        .contact-btn i { font-size: 1.2rem; }
-
-        /* Footer */
-        footer { text-align: center; padding: 30px; background: #080808; color: #666; font-size: 0.9rem; border-top: 1px solid #1a1a1a; }
-
-        /* Responsive for mobile */
-        @media (max-width: 768px) {
-            .about-container { flex-direction: column-reverse; text-align: center; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
         }
+
+        :root {
+            --black: #000000;
+            --dark: #090909;
+            --card: #151515;
+            --gold: #f5b51b;
+            --gold-light: #ffc94d;
+            --white: #ffffff;
+            --gray: #a7a7a7;
+            --border: #242424;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .gold {
+            color: var(--gold);
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.94);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #111;
+        }
+
+        nav {
+            height: 75px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 13px;
+            color: #ddd;
+            transition: .3s;
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--gold);
+        }
+
+        .nav-links a.active::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: var(--gold);
+            bottom: -8px;
+            left: 0;
+        }
+
+        /* =========================
+           HOME
+        ========================= */
+
+        #home {
+            min-height: 100vh;
+            padding-top: 75px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .home-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 40px;
+            min-height: calc(100vh - 75px);
+        }
+
+        .hello {
+            color: var(--gold);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .home-text h1 {
+            font-size: clamp(42px, 6vw, 72px);
+            line-height: 1.05;
+            font-weight: 800;
+        }
+
+        .home-text h1 span {
+            color: var(--gold);
+        }
+
+        .typing {
+            margin-top: 25px;
+            font-size: 25px;
+            font-weight: 600;
+            color: #eee;
+            min-height: 40px;
+        }
+
+        .typing span {
+            color: var(--gold);
+        }
+
+        .home-description {
+            color: var(--gray);
+            margin-top: 20px;
+            max-width: 500px;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        .home-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: #000;
+        }
+
+        .btn-gold:hover {
+            background: var(--gold-light);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--gold);
+            color: var(--gold);
+        }
+
+        .btn-outline:hover {
+            background: var(--gold);
+            color: #000;
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           HOME VISUAL
+        ========================= */
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tech-illustration {
+            width: 480px;
+            max-width: 100%;
+            min-height: 390px;
+            position: relative;
+        }
+
+        .desk {
+            position: absolute;
+            width: 360px;
+            height: 18px;
+            background: #252525;
+            border-radius: 8px;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .desk::after {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 120px;
+            background: #252525;
+            left: 65px;
+            top: 12px;
+            box-shadow: 215px 0 #252525;
+        }
+
+        .monitor {
+            position: absolute;
+            width: 220px;
+            height: 145px;
+            background: #111;
+            border: 8px solid #252525;
+            border-radius: 10px;
+            left: 50%;
+            top: 60px;
+            transform: translateX(-50%);
+            box-shadow: 0 0 30px rgba(245,181,27,.13);
+        }
+
+        .monitor::after {
+            content: "";
+            position: absolute;
+            width: 55px;
+            height: 12px;
+            background: #333;
+            bottom: -27px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .screen {
+            padding: 18px;
+            height: 100%;
+            background:
+                linear-gradient(
+                    135deg,
+                    #111 25%,
+                    #191919 25%,
+                    #191919 50%,
+                    #111 50%,
+                    #111 75%,
+                    #191919 75%
+                );
+            background-size: 20px 20px;
+            overflow: hidden;
+        }
+
+        .chart {
+            display: flex;
+            align-items: flex-end;
+            gap: 8px;
+            height: 80px;
+            margin-top: 8px;
+        }
+
+        .bar {
+            width: 18px;
+            background: var(--gold);
+            border-radius: 3px 3px 0 0;
+        }
+
+        .bar:nth-child(1) { height: 35px; }
+        .bar:nth-child(2) { height: 55px; }
+        .bar:nth-child(3) { height: 42px; }
+        .bar:nth-child(4) { height: 72px; }
+        .bar:nth-child(5) { height: 62px; }
+
+        .person {
+            position: absolute;
+            width: 125px;
+            height: 145px;
+            background: #315baf;
+            border-radius: 55px 55px 25px 25px;
+            bottom: 78px;
+            left: 90px;
+            transform: rotate(-5deg);
+        }
+
+        .head {
+            position: absolute;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #d18b5a;
+            top: -35px;
+            left: 38px;
+        }
+
+        .hair {
+            position: absolute;
+            width: 52px;
+            height: 27px;
+            background: #171717;
+            border-radius: 50% 50% 30% 30%;
+            top: -39px;
+            left: 36px;
+        }
+
+        .laptop {
+            position: absolute;
+            width: 130px;
+            height: 75px;
+            background: #222;
+            border: 5px solid #444;
+            border-radius: 5px;
+            bottom: 75px;
+            right: 60px;
+            transform: rotate(-5deg);
+        }
+
+        .laptop::after {
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 7px;
+            background: #777;
+            bottom: -12px;
+            left: -15px;
+            border-radius: 5px;
+        }
+
+        .plant {
+            position: absolute;
+            right: 55px;
+            top: 50px;
+            width: 70px;
+            height: 75px;
+        }
+
+        .pot {
+            position: absolute;
+            width: 45px;
+            height: 35px;
+            background: #d57b36;
+            bottom: 0;
+            left: 13px;
+            border-radius: 0 0 15px 15px;
+        }
+
+        .leaf {
+            position: absolute;
+            width: 30px;
+            height: 55px;
+            background: #4f9e45;
+            border-radius: 100% 0;
+            transform: rotate(-25deg);
+            left: 10px;
+            top: 0;
+        }
+
+        .leaf:nth-child(2) {
+            transform: rotate(30deg);
+            left: 35px;
+            top: 5px;
+        }
+
+        .floating {
+            position: absolute;
+            background: #202020;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 12px;
+            color: var(--gold);
+            font-size: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.4);
+        }
+
+        .floating.one {
+            top: 20px;
+            right: 30px;
+        }
+
+        .floating.two {
+            top: 160px;
+            right: 0;
+        }
+
+        .floating.three {
+            bottom: 100px;
+            right: 30px;
+        }
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            padding: 110px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: "";
+            position: absolute;
+            width: 55px;
+            height: 3px;
+            background: var(--gold);
+            left: 50%;
+            bottom: -12px;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            color: var(--gray);
+            margin-top: 25px;
+            font-size: 13px;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        #about {
+            background: #030303;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--gold);
+            left: 18px;
+            top: 18px;
+            z-index: 0;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 390px;
+            object-fit: cover;
+            object-position: center;
+            position: relative;
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        .about-text h3 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #aaa;
+            line-height: 1.9;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 35px 20px;
+            text-align: center;
+            transition: .3s;
+            border-radius: 5px;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+            box-shadow: 0 10px 35px rgba(245,181,27,.1);
+        }
+
+        .skill-icon {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            margin: auto auto 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #202020;
+            color: var(--gold);
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .skill-card h3 {
+            font-size: 17px;
+        }
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        #projects {
+            background: #030303;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+            transition: .3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            background: #111;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.06);
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            color: var(--gold);
+            font-size: 18px;
+            margin-bottom: 14px;
+        }
+
+        .project-content p {
+            color: #999;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        /* =========================
+           STATS
+        ========================= */
+
+        .stats {
+            background:
+                linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.9)),
+                radial-gradient(circle at center, #333 0%, #050505 70%);
+            padding: 80px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .stat-card {
+            background: rgba(20,20,20,.9);
+            border: 1px solid #292929;
+            text-align: center;
+            padding: 35px;
+            border-radius: 4px;
+        }
+
+        .stat-number {
+            color: var(--gold);
+            font-size: 34px;
+            font-weight: 800;
+        }
+
+        .stat-label {
+            color: #aaa;
+            font-size: 13px;
+            margin-top: 8px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .contact-card {
+            background: #111;
+            border: 1px solid #222;
+            padding: 30px 15px;
+            text-align: center;
+            border-radius: 5px;
+            transition: .3s;
+        }
+
+        .contact-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            width: 55px;
+            height: 55px;
+            background: #222;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            font-size: 21px;
+        }
+
+        .contact-card h4 {
+            font-size: 11px;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .contact-card a,
+        .contact-card p {
+            font-size: 12px;
+            color: white;
+            word-break: break-word;
+        }
+
+        .social-links {
+            margin-top: 45px;
+            text-align: center;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            width: 45px;
+            height: 45px;
+            border: 1px solid #333;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 5px;
+            color: var(--gold);
+            transition: .3s;
+            font-size: 13px;
+        }
+
+        .social-links a:hover {
+            background: var(--gold);
+            color: #000;
+            transform: translateY(-4px);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #050505;
+            border-top: 1px solid #151515;
+            text-align: center;
+            padding: 25px;
+            color: #777;
+            font-size: 12px;
+        }
+
+        footer span {
+            color: var(--gold);
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .home-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 80px 0;
+            }
+
+            .home-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .home-buttons {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                order: -1;
+            }
+
+            .tech-illustration {
+                transform: scale(.85);
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                width: 320px;
+                max-width: 85%;
+                margin: auto;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            nav {
+                height: 65px;
+            }
+
+            .logo {
+                font-size: 15px;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 9px;
+            }
+
+            #home {
+                padding-top: 65px;
+            }
+
+            .home-text h1 {
+                font-size: 42px;
+            }
+
+            .typing {
+                font-size: 19px;
+            }
+
+            .tech-illustration {
+                transform: scale(.68);
+                margin-left: -60px;
+                margin-right: -60px;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+
+            .skill-card {
+                padding: 25px 10px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                width: 270px;
+            }
+
+            .about-image img {
+                height: 330px;
+            }
+        }
+
     </style>
 </head>
+
 <body>
 
-    <!-- Header / Navbar -->
-    <header>
-        <a href="#" class="logo">Shahd Zakaria</a>
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header>
+
+    <div class="container">
+
         <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+
+            <a href="#home" class="logo">
+                Shahd <span class="gold">Waez</span>
+            </a>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#home" class="active">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
             </ul>
+
         </nav>
-    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <h1>Shahd Zakaria Abdelrahman waez</h1>
-        <h2>Data Analyst</h2>
-        <p>Turning complex data into clear, actionable insights using Power BI, SQL, and advanced analytics tools.</p>
-        <a href="#projects" class="btn">View My Work</a>
-    </section>
+    </div>
 
-    <!-- About Section with Image -->
-    <section id="about">
-        <h2 class="section-title">About Me</h2>
-        <p class="section-subtitle">Get to know more about my background</p>
-        
-        <div class="about-container">
+</header>
+
+
+<!-- =========================
+     HOME
+========================= -->
+
+<section id="home">
+
+    <div class="container">
+
+        <div class="home-content">
+
+            <div class="home-text">
+
+                <div class="hello">
+                    HELLO!
+                </div>
+
+                <h1>
+                    I'm <span>Shahd</span><br>
+                    <span>Waez</span>
+                </h1>
+
+                <div class="typing">
+                    A <span id="typing-text"></span>
+                </div>
+
+                <p class="home-description">
+                    Turning raw data into meaningful insights,
+                    interactive dashboards, and better decisions.
+                </p>
+
+                <div class="home-buttons">
+
+                    <a href="#projects" class="btn btn-gold">
+                        View My Projects
+                    </a>
+
+                    <a href="#contact" class="btn btn-outline">
+                        Contact Me
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- HOME VISUAL -->
+
+            <div class="hero-visual">
+
+                <div class="tech-illustration">
+
+                    <div class="floating one">📊</div>
+                    <div class="floating two">SQL</div>
+                    <div class="floating three">🐍</div>
+
+                    <div class="monitor">
+
+                        <div class="screen">
+
+                            <div style="
+                                width:75%;
+                                height:8px;
+                                background:#f5b51b;
+                                border-radius:5px;">
+                            </div>
+
+                            <div class="chart">
+
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="plant">
+
+                        <div class="leaf"></div>
+                        <div class="leaf"></div>
+                        <div class="pot"></div>
+
+                    </div>
+
+                    <div class="person">
+
+                        <div class="head"></div>
+                        <div class="hair"></div>
+
+                    </div>
+
+                    <div class="laptop"></div>
+
+                    <div class="desk"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>About Me</h2>
+
+            <p>
+                Get to know more about me and my passion for data.
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="about-image">
+
+                <img
+                    src="IMG-20260910-WA0029.jpg"
+                    alt="Shahd Zakaria Abdelrahman Waez">
+
+            </div>
+
+
             <div class="about-text">
-                <p>I am a Data Analyst who enjoys digging into messy datasets, uncovering patterns, and turning numbers into clear, meaningful stories. I am passionate about understanding what the data is really saying and finding insights that make a difference.</p>
-                <p>I use SQL, Excel, Power BI, and data visualization to analyze data, build interactive dashboards, and solve real-world problems. I am particularly interested in understanding the "why" behind the numbers—going beyond what happened to discover the trends, relationships, and insights that actually matter.</p>
-                <p>I believe great analysis is not just about presenting numbers, but about turning raw data into actionable insights and better decisions. I'm continually learning, experimenting with new datasets, and building projects that strengthen my analytical thinking.</p>
-            </div>
-            <div class="about-image-wrapper">
-                <img src="IMG-20260809-WA0008(1).jpg" alt="Shahd Zakaria" class="about-profile-img">
-            </div>
-        </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2 class="section-title">Skills</h2>
-        <p class="section-subtitle">A showcase of my technical toolkit and the core tools I use.</p>
-        
+                <h3>
+                    I'm a <span class="gold">Data Analyst</span>
+                </h3>
+
+                <p>
+                    I’m a Data Analyst who enjoys diving into messy datasets,
+                    discovering patterns, and turning numbers into clear,
+                    meaningful stories. I’m passionate about understanding
+                    what the data is really saying and finding insights that
+                    make a real difference.
+                </p>
+
+                <p>
+                    I use Python, SQL, Excel, Power BI, and data visualization
+                    to analyze data, build interactive dashboards, and solve
+                    real-world problems. I’m particularly interested in
+                    understanding the “why” behind the numbers — going beyond
+                    what happened to discover trends, relationships, and
+                    insights that truly matter.
+                </p>
+
+                <p>
+                    I believe great analysis is not just about presenting
+                    numbers, but about turning raw data into actionable
+                    insights and better decisions. I continuously learn,
+                    experiment with new datasets, and build projects that
+                    strengthen my analytical thinking.
+                </p>
+
+                <p>
+                    Explore my projects to see how I turn data into insights,
+                    dashboards, and meaningful stories.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Skills</h2>
+
+            <p>
+                My technical skills and tools for turning data into insights.
+            </p>
+
+        </div>
+
+
         <div class="skills-grid">
-            <div class="skill-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-                <p>Python</p>
-            </div>
-            <div class="skill-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="SQL">
-                <p>SQL</p>
-            </div>
-            <div class="skill-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI">
-                <p>Power BI</p>
-            </div>
-            <div class="skill-card">
-                <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/excel/excel.png" alt="Excel">
-                <p>Excel</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2 class="section-title">Projects</h2>
-        <p class="section-subtitle">A selection of data analytics projects using Python, SQL, Power BI, and Excel.</p>
-        
+            <div class="skill-card">
+                <div class="skill-icon">Py</div>
+                <h3>Python</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">SQL</div>
+                <h3>SQL</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">BI</div>
+                <h3>Power BI</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">X</div>
+                <h3>Excel</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>My Projects</h2>
+
+            <p>
+                A selection of data analytics projects using Python,
+                SQL, Power BI, and Excel.
+            </p>
+
+        </div>
+
+
         <div class="projects-grid">
-            <!-- Project 1 -->
+
+
+            <!-- ADIDAS -->
+
             <div class="project-card">
-                <img src="IMG-20260910-WA0027.jpg" alt="Adidas Dashboard" class="project-img">
-                <div class="project-content">
-                    <div>
-                        <h3>Adidas Sales Performance Dashboard</h3>
-                        <p>Built an interactive Power BI dashboard tracking sales volumes, profit margins, and regional retail performance trends.</p>
-                    </div>
-                    <div class="project-tech">Power BI | DAX | Data Visualization</div>
+
+                <div class="project-image">
+
+                    <img
+                        src="IMG-20260809-WA0008(1).jpg"
+                        alt="Adidas Sales Performance Dashboard">
+
                 </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        Adidas Sales Performance Dashboard
+                    </h3>
+
+                    <p>
+                        Built an interactive Power BI dashboard tracking
+                        sales volumes, profit margins, and regional retail
+                        performance trends.
+                    </p>
+
+                </div>
+
             </div>
 
-            <!-- Project 2 -->
+
+            <!-- KICKSTARTER -->
+
             <div class="project-card">
-                <img src="IMG-20260910-WA0029.jpg" alt="Super Store Dashboard" class="project-img">
-                <div class="project-content">
-                    <div>
-                        <h3>Super Store Sales & Profit Dashboard</h3>
-                        <p>Analyzed retail transactional data using SQL and Power BI to uncover customer segments, shipping modes, and profit optimization opportunities.</p>
-                    </div>
-                    <div class="project-tech">SQL | Power BI | Data Analysis</div>
+
+                <div class="project-image">
+
+                    <img
+                        src="IMG-20260910-WA0046.jpg"
+                        alt="Kickstarter Projects Analysis">
+
                 </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        Kickstarter Projects Analysis
+                    </h3>
+
+                    <p>
+                        Designed a multi-page Power BI dashboard analyzing
+                        funding goals, pledged amounts, and project success
+                        rates.
+                    </p>
+
+                </div>
+
             </div>
 
-            <!-- Project 3 -->
+
+            <!-- SUPER STORE -->
+
             <div class="project-card">
-                <img src="IMG-20260910-WA0046.jpg" alt="Kickstarter Analysis" class="project-img">
-                <div class="project-content">
-                    <div>
-                        <h3>Kickstarter Projects Analysis</h3>
-                        <p>Designed a multi-page Power BI dashboard analyzing funding goals, pledged amounts, and project success rates.</p>
-                    </div>
-                    <div class="project-tech">Power BI | Data Modeling | Analytics</div>
+
+                <div class="project-image">
+
+                    <img
+                        src="IMG-20260907-WA0027.jpg"
+                        alt="Super Store Sales and Profit Dashboard">
+
                 </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        Super Store Sales & Profit Dashboard
+                    </h3>
+
+                    <p>
+                        Analyzed retail transactional data using SQL and
+                        Power BI to uncover customer segments, shipping
+                        modes, and profit optimization opportunities.
+                    </p>
+
+                </div>
+
             </div>
+
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2 class="section-title">Contact Me</h2>
-        <p class="section-subtitle">Let's connect and discuss opportunities</p>
-        <div class="contact-container">
-            <a href="mailto:shahdwaez075@gmail.com" class="contact-btn">
-                <i class="fas fa-envelope"></i> Email Me
-            </a>
-            <a href="https://www.linkedin.com/in/shahd-waez" target="_blank" class="contact-btn">
-                <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-            <a href="https://wa.me/201151303384" target="_blank" class="contact-btn">
-                <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
+    </div>
+
+</section>
+
+
+<!-- =========================
+     STATS
+========================= -->
+
+<section class="stats">
+
+    <div class="container">
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-number">
+                    4
+                </div>
+
+                <div class="stat-label">
+                    Skills
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-number">
+                    3
+                </div>
+
+                <div class="stat-label">
+                    Projects
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-number">
+                    2028
+                </div>
+
+                <div class="stat-label">
+                    Expected Graduation
+                </div>
+
+            </div>
+
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Shahd Zakaria Abdelrahman waez. All rights reserved.</p>
-    </footer>
+    </div>
 
-</body>
-</html>
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Contact Me</h2>
+
+            <p>
+                Below are the details to reach out to me.
+            </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    📍
+                </div>
+
+                <h4>Address</h4>
+
+                <p>
+                    Cairo, Egypt
+                </p>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    ☎
+                </div>
+
+                <h4>Contact Number</h4>
+
+                <a href="tel:+2001151303384">
+                    +20 01151303384
+                </a>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    ✉
+                </div>
+
+                <h4>Email Address</h4>
+
+                <a href="mailto:shahdwaez075@gmail.com">
+                    shahdwaez075@gmail.com
+                </a>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    in
+                </div>
+
+                <h4>LinkedIn</h4>
+
+                <a
+                    href="https://www.linkedin.com/in/shahd-waez-3067533ba/"
+                    target="_blank">
+                    View Profile
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="social-links">
+
+            <a
+                href="https://www.linkedin.com/in/shahd-waez-3067533ba/"
+                target="_blank"
+                title="LinkedIn">
+                in
+            </a>
+
+
+            <a
+                href="https://www.facebook.com/profile.php?id=61579408673305"
+                target="_blank"
+                title="Facebook">
+                f
+            </a>
+
+
+            <a
+                href="https://github.com/shahdwaez075-commits/portfolio"
+                target="_blank"
+                title="GitHub">
+                Git
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    © 2026
+    <span>Shahd Zakaria Abdelrahman Waez</span>.
+    All Rights Reserved.
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+    const words = [
+        "Data Analyst",
+        "Power BI Analyst",
+        "Data Enthusiast"
+    ];
+
+    let wordIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    const typingElement =
+        document.getElementById("typing-text");
+
+
+    function typeEffect() {
+
+        const currentWord = words[wordIndex];
+
+        if (!deleting) {
+
+            typingElement.textContent =
+                currentWord.substring(0, charIndex + 1);
+
+            charIndex++;
+
+            if (char

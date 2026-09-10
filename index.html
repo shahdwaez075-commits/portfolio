@@ -36,8 +36,8 @@
         .about-content { max-width: 800px; font-size: 1.1rem; color: #ccc; line-height: 1.8; }
         .about-content p { margin-bottom: 15px; }
 
-        /* Skills Grid with Logos */
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 20px; max-width: 900px; }
+        /* Skills Grid with Logos (4 items only) */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; max-width: 700px; }
         .skill-card { background: #161616; border: 1px solid #222; border-radius: 12px; padding: 25px 10px; text-align: center; transition: 0.3s; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
         .skill-card:hover { border-color: #3498db; transform: translateY(-5px); background: #1a1a1a; }
         .skill-card img { width: 45px; height: 45px; object-fit: contain; }
@@ -81,6 +81,7 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <!-- لو الصورة الشخصية ظهرت مكسورة جربي تشيلي أو تضيفي .jpeg زيادة حسب المرفوع -->
         <img src="profile.jpeg.jpeg" alt="Shahd Zakaria" class="profile-img">
         <h1>Shahd Zakaria Abdelrahman waez</h1>
         <h2>Data Analyst</h2>
@@ -99,10 +100,10 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills Section (Python, SQL, Power BI, Excel Only) -->
     <section id="skills">
         <h2 class="section-title">Skills</h2>
-        <p class="section-subtitle">A showcase of my technical toolkit and the tools I use to turn data into insights.</p>
+        <p class="section-subtitle">A showcase of my technical toolkit and the core tools I use.</p>
         
         <div class="skills-grid">
             <div class="skill-card">
@@ -120,22 +121,6 @@
             <div class="skill-card">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftexcel/microsoftexcel-original.svg" alt="Excel">
                 <p>Excel</p>
-            </div>
-            <div class="skill-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
-                <p>Pandas</p>
-            </div>
-            <div class="skill-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy">
-                <p>NumPy</p>
-            </div>
-            <div class="skill-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
-                <p>Git & GitHub</p>
-            </div>
-            <div class="skill-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">
-                <p>VS Code</p>
             </div>
         </div>
     </section>

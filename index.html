@@ -20,7 +20,7 @@
 
         /* Hero Section */
         .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 120px 20px 60px; background: radial-gradient(circle, #1a1a1a 0%, #0b0b0b 100%); }
-        .profile-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid #3498db; margin-bottom: 20px; box-shadow: 0 0 20px rgba(52, 152, 219, 0.3); }
+        .hero-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid #3498db; margin-bottom: 20px; box-shadow: 0 0 20px rgba(52, 152, 219, 0.3); }
         .hero h1 { font-size: 2.8rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
         .hero h2 { font-size: 1.4rem; font-weight: 400; color: #3498db; margin-bottom: 20px; }
         .hero p { font-size: 1rem; color: #aaa; max-width: 600px; margin-bottom: 30px; }
@@ -32,9 +32,12 @@
         .section-title { font-size: 2.2rem; margin-bottom: 10px; font-weight: 700; border-left: 4px solid #3498db; padding-left: 15px; }
         .section-subtitle { color: #888; font-size: 1rem; margin-bottom: 50px; }
 
-        /* About Section */
-        .about-content { max-width: 800px; font-size: 1.1rem; color: #ccc; line-height: 1.8; }
-        .about-content p { margin-bottom: 15px; }
+        /* About Section Layout with Image */
+        .about-container { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
+        .about-text { flex: 1; min-width: 300px; font-size: 1.05rem; color: #ccc; line-height: 1.8; }
+        .about-text p { margin-bottom: 15px; }
+        .about-image-wrapper { flex-shrink: 0; text-align: center; }
+        .about-profile-img { width: 220px; height: 220px; border-radius: 15px; object-fit: cover; border: 3px solid #3498db; box-shadow: 0 10px 30px rgba(52, 152, 219, 0.2); }
 
         /* Skills Grid */
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; max-width: 700px; }
@@ -61,6 +64,11 @@
 
         /* Footer */
         footer { text-align: center; padding: 30px; background: #080808; color: #666; font-size: 0.9rem; border-top: 1px solid #1a1a1a; }
+
+        /* Responsive for mobile */
+        @media (max-width: 768px) {
+            .about-container { flex-direction: column-reverse; text-align: center; }
+        }
     </style>
 </head>
 <body>
@@ -79,23 +87,28 @@
         </nav>
     </header>
 
-    <!-- Hero Section (Profile Image) -->
+    <!-- Hero Section -->
     <section id="home" class="hero">
-        <img src="IMG-20260907-WA0027.jpg" alt="Shahd Zakaria" class="profile-img">
         <h1>Shahd Zakaria Abdelrahman waez</h1>
         <h2>Data Analyst</h2>
         <p>Turning complex data into clear, actionable insights using Power BI, SQL, and advanced analytics tools.</p>
         <a href="#projects" class="btn">View My Work</a>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section with Image -->
     <section id="about">
         <h2 class="section-title">About Me</h2>
         <p class="section-subtitle">Get to know more about my background</p>
-        <div class="about-content">
-            <p>I am a Data Analyst who enjoys digging into messy datasets, uncovering patterns, and turning numbers into clear, meaningful stories. I am passionate about understanding what the data is really saying and finding insights that make a difference.</p>
-            <p>I use SQL, Excel, Power BI, and data visualization to analyze data, build interactive dashboards, and solve real-world problems. I am particularly interested in understanding the "why" behind the numbers—going beyond what happened to discover the trends, relationships, and insights that actually matter.</p>
-            <p>I believe great analysis is not just about presenting numbers, but about turning raw data into actionable insights and better decisions. I'm continually learning, experimenting with new datasets, and building projects that strengthen my analytical thinking.</p>
+        
+        <div class="about-container">
+            <div class="about-text">
+                <p>I am a Data Analyst who enjoys digging into messy datasets, uncovering patterns, and turning numbers into clear, meaningful stories. I am passionate about understanding what the data is really saying and finding insights that make a difference.</p>
+                <p>I use SQL, Excel, Power BI, and data visualization to analyze data, build interactive dashboards, and solve real-world problems. I am particularly interested in understanding the "why" behind the numbers—going beyond what happened to discover the trends, relationships, and insights that actually matter.</p>
+                <p>I believe great analysis is not just about presenting numbers, but about turning raw data into actionable insights and better decisions. I'm continually learning, experimenting with new datasets, and building projects that strengthen my analytical thinking.</p>
+            </div>
+            <div class="about-image-wrapper">
+                <img src="IMG-20260809-WA0008(1).jpg" alt="Shahd Zakaria" class="about-profile-img">
+            </div>
         </div>
     </section>
 
@@ -130,9 +143,9 @@
         <p class="section-subtitle">A selection of data analytics projects using Python, SQL, Power BI, and Excel.</p>
         
         <div class="projects-grid">
-            <!-- Project 1: Adidas -->
+            <!-- Project 1 -->
             <div class="project-card">
-                <img src="IMG-20260910-WA0029.jpg" alt="Adidas Dashboard" class="project-img">
+                <img src="IMG-20260910-WA0027.jpg" alt="Adidas Dashboard" class="project-img">
                 <div class="project-content">
                     <div>
                         <h3>Adidas Sales Performance Dashboard</h3>
@@ -142,27 +155,27 @@
                 </div>
             </div>
 
-            <!-- Project 2: Kickstarter -->
+            <!-- Project 2 -->
             <div class="project-card">
-                <img src="IMG-20260809-WA0008(1).jpg" alt="Kickstarter Analysis" class="project-img">
-                <div class="project-content">
-                    <div>
-                        <h3>Kickstarter Projects Analysis</h3>
-                        <p>Designed a multi-page Power BI dashboard analyzing funding goals, pledged amounts, and project success rates.</p>
-                    </div>
-                    <div class="project-tech">Power BI | Data Modeling | Analytics</div>
-                </div>
-            </div>
-
-            <!-- Project 3: Super Store -->
-            <div class="project-card">
-                <img src="IMG-20260910-WA0046.jpg" alt="Super Store Dashboard" class="project-img">
+                <img src="IMG-20260910-WA0029.jpg" alt="Super Store Dashboard" class="project-img">
                 <div class="project-content">
                     <div>
                         <h3>Super Store Sales & Profit Dashboard</h3>
                         <p>Analyzed retail transactional data using SQL and Power BI to uncover customer segments, shipping modes, and profit optimization opportunities.</p>
                     </div>
                     <div class="project-tech">SQL | Power BI | Data Analysis</div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <img src="IMG-20260910-WA0046.jpg" alt="Kickstarter Analysis" class="project-img">
+                <div class="project-content">
+                    <div>
+                        <h3>Kickstarter Projects Analysis</h3>
+                        <p>Designed a multi-page Power BI dashboard analyzing funding goals, pledged amounts, and project success rates.</p>
+                    </div>
+                    <div class="project-tech">Power BI | Data Modeling | Analytics</div>
                 </div>
             </div>
         </div>

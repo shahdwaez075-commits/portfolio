@@ -565,6 +565,8 @@
             overflow: hidden;
         }
 
+        /* TOOL LOGOS */
+
         .skill-icon img {
             width: 92px;
             height: 92px;
@@ -745,7 +747,13 @@
         ========================= */
 
         #contact {
-            background: #000;
+            background:
+                linear-gradient(
+                    rgba(0,0,0,.76),
+                    rgba(0,0,0,.91)
+                ),
+                url("1789042915574.png") center center / cover no-repeat;
+            overflow: hidden;
         }
 
         #contact .section-title {
@@ -757,12 +765,12 @@
             content: "CONTACT";
             position: absolute;
             left: 50%;
-            top: -18px;
+            top: -25px;
             transform: translateX(-50%);
-            font-size: 78px;
+            font-size: clamp(70px, 12vw, 145px);
             font-weight: 800;
             letter-spacing: -3px;
-            color: rgba(25,25,25,.9);
+            color: rgba(255,255,255,.055);
             z-index: 0;
             pointer-events: none;
             white-space: nowrap;
@@ -787,7 +795,8 @@
         }
 
         .contact-card {
-            background: #111;
+            background: rgba(17,17,17,.88);
+            backdrop-filter: blur(6px);
             border: 1px solid #222;
             padding: 30px 15px;
             text-align: center;
@@ -1373,7 +1382,6 @@
 
 <!-- =========================
      PROJECTS
-     (UNCHANGED)
 ========================= -->
 
 <section id="projects">

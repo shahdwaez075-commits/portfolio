@@ -130,6 +130,9 @@
             align-items: center;
             position: relative;
             overflow: hidden;
+            background: 
+                linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
+                url("1789042915574.png") center center / cover no-repeat;
         }
 
         .home-content {
@@ -138,6 +141,8 @@
             align-items: center;
             gap: 40px;
             min-height: calc(100vh - 75px);
+            position: relative;
+            z-index: 2;
         }
 
         .hello {
@@ -171,7 +176,7 @@
         }
 
         .home-description {
-            color: var(--gray);
+            color: #ccc;
             margin-top: 20px;
             max-width: 500px;
             line-height: 1.8;
@@ -565,11 +570,9 @@
             overflow: hidden;
         }
 
-        /* TOOL LOGOS */
-
         .skill-icon img {
-            width: 92px;
-            height: 92px;
+            width: 85px;
+            height: 85px;
             object-fit: contain;
         }
 
@@ -582,63 +585,6 @@
             color: #9ba8c5;
             font-size: 13px;
             margin-top: 8px;
-        }
-
-
-        /* =========================
-           SQL LOGO
-        ========================= */
-
-        .sql-logo {
-            width: 95px;
-            height: 105px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .sql-cylinder {
-            width: 82px;
-            height: 70px;
-            background: linear-gradient(90deg, #0879d1, #16b8f2, #0879d1);
-            border-radius: 50% / 15%;
-            position: relative;
-            box-shadow: 0 5px 15px rgba(0,140,255,.25);
-        }
-
-        .sql-cylinder::before {
-            content: "";
-            position: absolute;
-            width: 82px;
-            height: 25px;
-            top: -8px;
-            left: 0;
-            background: #16a9e8;
-            border-radius: 50%;
-        }
-
-        .sql-cylinder::after {
-            content: "";
-            position: absolute;
-            width: 82px;
-            height: 22px;
-            bottom: -6px;
-            left: 0;
-            background: #0879d1;
-            border-radius: 50%;
-        }
-
-        .sql-text {
-            position: absolute;
-            z-index: 3;
-            color: white;
-            font-size: 25px;
-            font-weight: 700;
-            top: 29px;
-            left: 50%;
-            transform: translateX(-50%);
-            letter-spacing: -1px;
         }
 
 
@@ -747,12 +693,7 @@
         ========================= */
 
         #contact {
-            background:
-                linear-gradient(
-                    rgba(0,0,0,.76),
-                    rgba(0,0,0,.91)
-                ),
-                url("1789042915574.png") center center / cover no-repeat;
+            background: #030303;
             overflow: hidden;
         }
 
@@ -993,12 +934,8 @@
             }
 
             .skill-icon img {
-                width: 62px;
-                height: 62px;
-            }
-
-            .sql-logo {
-                transform: scale(.72);
+                width: 55px;
+                height: 55px;
             }
 
             .stats-grid {
@@ -1044,7 +981,7 @@
         <nav>
 
             <a href="#home" class="logo">
-                Shahd <span class="gold">Waez</span>
+                Shahd <span class="gold">Zakaria</span>
             </a>
 
             <ul class="nav-links">
@@ -1096,7 +1033,7 @@
 
                 <h1>
                     I'm <span>Shahd</span><br>
-                    <span>Waez</span>
+                    <span>Zakaria</span>
                 </h1>
 
                 <div class="typing">
@@ -1290,7 +1227,7 @@
                 <div class="skill-icon">
 
                     <img
-                        src="https://cdn.simpleicons.org/python"
+                        src="https://cdn.simpleicons.org/python/3776AB"
                         alt="Python">
 
                 </div>
@@ -1310,15 +1247,9 @@
 
                 <div class="skill-icon">
 
-                    <div class="sql-logo">
-
-                        <div class="sql-cylinder"></div>
-
-                        <div class="sql-text">
-                            SQL
-                        </div>
-
-                    </div>
+                    <img
+                        src="https://cdn.simpleicons.org/sqlite/003B57"
+                        alt="SQL">
 
                 </div>
 
@@ -1338,7 +1269,7 @@
                 <div class="skill-icon">
 
                     <img
-                        src="https://cdn.simpleicons.org/powerbi"
+                        src="https://cdn.simpleicons.org/powerbi/F2C811"
                         alt="Power BI">
 
                 </div>
@@ -1359,7 +1290,7 @@
                 <div class="skill-icon">
 
                     <img
-                        src="https://cdn.simpleicons.org/microsoftexcel"
+                        src="https://cdn.simpleicons.org/microsoft-excel/217346"
                         alt="Excel">
 
                 </div>

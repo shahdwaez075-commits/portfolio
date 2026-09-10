@@ -19,15 +19,16 @@
         nav ul li a:hover { color: #3498db; }
 
         /* Hero Section */
-        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; background: radial-gradient(circle, #1a1a1a 0%, #0b0b0b 100%); }
-        .hero h1 { font-size: 3rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
-        .hero h2 { font-size: 1.5rem; font-weight: 400; color: #3498db; margin-bottom: 20px; }
+        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 120px 20px 60px; background: radial-gradient(circle, #1a1a1a 0%, #0b0b0b 100%); }
+        .profile-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid #3498db; margin-bottom: 20px; box-shadow: 0 0 20px rgba(52, 152, 219, 0.3); }
+        .hero h1 { font-size: 2.8rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
+        .hero h2 { font-size: 1.4rem; font-weight: 400; color: #3498db; margin-bottom: 20px; }
         .hero p { font-size: 1rem; color: #aaa; max-width: 600px; margin-bottom: 30px; }
         .btn { display: inline-block; padding: 12px 30px; background: #3498db; color: #fff; border-radius: 5px; text-decoration: none; font-weight: 600; transition: 0.3s; }
         .btn:hover { background: #2980b9; }
 
         /* General Section Styling */
-        section { padding: 100px 8% 80px; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+        section { padding: 100px 8% 80px; min-height: 90vh; display: flex; flex-direction: column; justify-content: center; }
         .section-title { font-size: 2.2rem; margin-bottom: 10px; font-weight: 700; border-left: 4px solid #3498db; padding-left: 15px; }
         .section-subtitle { color: #888; font-size: 1rem; margin-bottom: 50px; }
 
@@ -35,20 +36,22 @@
         .about-content { max-width: 800px; font-size: 1.1rem; color: #ccc; line-height: 1.8; }
         .about-content p { margin-bottom: 15px; }
 
-        /* Skills Grid */
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-        .skill-card { background: #161616; border: 1px solid #222; border-radius: 8px; padding: 20px; text-align: center; transition: 0.3s; }
-        .skill-card:hover { border-color: #3498db; transform: translateY(-3px); }
-        .skill-card i { font-size: 2rem; color: #3498db; margin-bottom: 10px; }
-        .skill-card p { font-weight: 600; color: #fff; }
+        /* Skills Grid with Logos */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 20px; max-width: 900px; }
+        .skill-card { background: #161616; border: 1px solid #222; border-radius: 12px; padding: 25px 10px; text-align: center; transition: 0.3s; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
+        .skill-card:hover { border-color: #3498db; transform: translateY(-5px); background: #1a1a1a; }
+        .skill-card img { width: 45px; height: 45px; object-fit: contain; }
+        .skill-card p { font-weight: 600; color: #fff; font-size: 0.95rem; }
 
-        /* Projects Grid */
+        /* Projects Grid with Images */
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .project-card { background: #161616; border: 1px solid #222; border-radius: 10px; padding: 25px; transition: 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
+        .project-card { background: #161616; border: 1px solid #222; border-radius: 10px; overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
         .project-card:hover { transform: translateY(-5px); border-color: #3498db; }
+        .project-img { width: 100%; height: 180px; object-fit: cover; border-bottom: 1px solid #222; }
+        .project-content { padding: 25px; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; }
         .project-card h3 { font-size: 1.3rem; margin-bottom: 15px; color: #fff; }
         .project-card p { color: #aaa; font-size: 0.95rem; margin-bottom: 20px; }
-        .project-tech { font-size: 0.85rem; color: #3498db; font-weight: 600; margin-bottom: 20px; }
+        .project-tech { font-size: 0.85rem; color: #3498db; font-weight: 600; margin-top: auto; }
 
         /* Contact Section */
         .contact-container { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
@@ -78,6 +81,7 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <img src="profile.jpeg.jpeg" alt="Shahd Zakaria" class="profile-img">
         <h1>Shahd Zakaria Abdelrahman waez</h1>
         <h2>Data Analyst</h2>
         <p>Turning complex data into clear, actionable insights using Power BI, SQL, and advanced analytics tools.</p>
@@ -97,60 +101,85 @@
 
     <!-- Skills Section -->
     <section id="skills">
-        <h2 class="section-title">My Skills</h2>
-        <p class="section-subtitle">Technologies and tools I use to analyze data</p>
+        <h2 class="section-title">Skills</h2>
+        <p class="section-subtitle">A showcase of my technical toolkit and the tools I use to turn data into insights.</p>
         
         <div class="skills-grid">
             <div class="skill-card">
-                <i class="fa-solid fa-database"></i>
-                <p>SQL & Databases</p>
-            </div>
-            <div class="skill-card">
-                <i class="fa-solid fa-chart-pie"></i>
-                <p>Power BI & DAX</p>
-            </div>
-            <div class="skill-card">
-                <i class="fa-solid fa-file-excel"></i>
-                <p>Advanced Excel</p>
-            </div>
-            <div class="skill-card">
-                <i class="fa-brands fa-python"></i>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
                 <p>Python</p>
+            </div>
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="SQL">
+                <p>SQL</p>
+            </div>
+            <div class="skill-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI">
+                <p>Power BI</p>
+            </div>
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftexcel/microsoftexcel-original.svg" alt="Excel">
+                <p>Excel</p>
+            </div>
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
+                <p>Pandas</p>
+            </div>
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy">
+                <p>NumPy</p>
+            </div>
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                <p>Git & GitHub</p>
+            </div>
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">
+                <p>VS Code</p>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects">
-        <h2 class="section-title">My Projects</h2>
+        <h2 class="section-title">Projects</h2>
         <p class="section-subtitle">A selection of data analytics projects using Python, SQL, Power BI, and Excel.</p>
         
         <div class="projects-grid">
             <!-- Project 1 -->
             <div class="project-card">
-                <div>
-                    <h3>Adidas Sales Performance Dashboard</h3>
-                    <p>Built an interactive Power BI dashboard tracking sales volumes, profit margins, and regional retail performance trends.</p>
+                <img src="adidas_sales_dashboard.jpeg.jpeg" alt="Adidas Dashboard" class="project-img">
+                <div class="project-content">
+                    <div>
+                        <h3>Adidas Sales Performance Dashboard</h3>
+                        <p>Built an interactive Power BI dashboard tracking sales volumes, profit margins, and regional retail performance trends.</p>
+                    </div>
+                    <div class="project-tech">Power BI | DAX | Data Visualization</div>
                 </div>
-                <div class="project-tech">Power BI | DAX | Data Visualization</div>
             </div>
 
             <!-- Project 2 -->
             <div class="project-card">
-                <div>
-                    <h3>Kickstarter Projects Analysis</h3>
-                    <p>Designed a multi-page Power BI dashboard analyzing funding goals, pledged amounts, and project success rates.</p>
+                <img src="kickstarter_analysis.jpeg.jpeg" alt="Kickstarter Analysis" class="project-img">
+                <div class="project-content">
+                    <div>
+                        <h3>Kickstarter Projects Analysis</h3>
+                        <p>Designed a multi-page Power BI dashboard analyzing funding goals, pledged amounts, and project success rates.</p>
+                    </div>
+                    <div class="project-tech">Power BI | Data Modeling | Analytics</div>
                 </div>
-                <div class="project-tech">Power BI | Data Modeling | Analytics</div>
             </div>
 
             <!-- Project 3 -->
             <div class="project-card">
-                <div>
-                    <h3>Super Store Sales & Profit Dashboard</h3>
-                    <p>Analyzed retail transactional data using SQL and Power BI to uncover customer segments, shipping modes, and profit optimization opportunities.</p>
+                <img src="super_store_sales_and_profit_dashboard.jpeg.jpeg" alt="Super Store Dashboard" class="project-img">
+                <div class="project-content">
+                    <div>
+                        <h3>Super Store Sales & Profit Dashboard</h3>
+                        <p>Analyzed retail transactional data using SQL and Power BI to uncover customer segments, shipping modes, and profit optimization opportunities.</p>
+                    </div>
+                    <div class="project-tech">SQL | Power BI | Data Analysis</div>
                 </div>
-                <div class="project-tech">SQL | Power BI | Data Analysis</div>
             </div>
         </div>
     </section>

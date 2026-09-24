@@ -651,6 +651,83 @@
             word-break: break-word;
         }
 
+        .comment-box {
+            margin-top: 50px;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .comment-box h4 {
+            font-size: 16px;
+            margin-bottom: 14px;
+            color: var(--white);
+        }
+
+        .comment-box input,
+        .comment-box textarea {
+            width: 100%;
+            background: rgba(20,20,20,.9);
+            border: 1px solid #292929;
+            color: var(--white);
+            padding: 10px 12px;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .comment-box textarea {
+            resize: vertical;
+            min-height: 70px;
+        }
+
+        .comment-box button {
+            background: var(--gold);
+            color: #000;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .comment-status {
+            font-size: 12px;
+            margin-top: 8px;
+            color: var(--gray);
+        }
+
+        .comments-list {
+            margin-top: 30px;
+            text-align: left;
+            max-height: 320px;
+            overflow-y: auto;
+        }
+
+        .comment-item {
+            background: rgba(20,20,20,.85);
+            border: 1px solid #292929;
+            border-radius: 6px;
+            padding: 12px 14px;
+            margin-bottom: 10px;
+        }
+
+        .comment-item .c-name {
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .comment-item .c-text {
+            color: #ddd;
+            font-size: 13px;
+            margin-top: 4px;
+            line-height: 1.6;
+        }
+
 
         /* =========================
            FOOTER
@@ -1432,6 +1509,16 @@
     <div class="rating-thanks" id="ratingThanks"></div>
  </div>
 
+ <div class="comment-box">
+    <h4>Leave a Comment</h4>
+    <input type="text" id="commentName" placeholder="Your name (optional)">
+    <textarea id="commentText" placeholder="Write your feedback..."></textarea>
+    <button id="commentSubmit">Submit Comment</button>
+    <div class="comment-status" id="commentStatus"></div>
+
+    <div class="comments-list" id="commentsList"></div>
+ </div>
+
 </section>
 
 
@@ -1522,7 +1609,7 @@
 
 
     /* =========================
-       RATING WIDGET (with diagnostics)
+       RATING WIDGET
     ========================= */
 
     const DB_URL = "https://shahd-portfolio-default-rtdb.firebaseio.com";
@@ -1591,6 +1678,73 @@
 
 
     /* =========================
+       COMMENTS WIDGET
+    ========================= */
+
+    function loadComments(){
+        fetch(DB_URL + "/comments.json")
+            .then(r => r.json())
+            .then(data => {
+                const list = document.getElementById("commentsList");
+                list.innerHTML = "";
+                if(!data) return;
+
+                const items = Object.values(data)
+                    .filter(c => c && c.text)
+                    .sort((a,b) => (b.ts||0) - (a.ts||0));
+
+                items.forEach(c => {
+                    const div = document.createElement("div");
+                    div.className = "comment-item";
+                    const safeName = (c.name || "Anonymous").slice(0,40);
+                    const safeText = String(c.text).slice(0,500);
+                    div.innerHTML =
+                        '<div class="c-name"></div><div class="c-text"></div>';
+                    div.querySelector(".c-name").textContent = safeName;
+                    div.querySelector(".c-text").textContent = safeText;
+                    list.appendChild(div);
+                });
+            })
+            .catch(()=>{});
+    }
+
+    document.getElementById("commentSubmit").addEventListener("click", ()=>{
+        const name = document.getElementById("commentName").value.trim();
+        const text = document.getElementById("commentText").value.trim();
+        const status = document.getElementById("commentStatus");
+
+        if(!text){
+            status.style.color = "#ff6666";
+            status.textContent = "Please write a comment first.";
+            return;
+        }
+
+        status.style.color = "#f5b51b";
+        status.textContent = "Posting...";
+
+        fetch(DB_URL + "/comments.json", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({name: name, text: text, ts: Date.now()})
+        })
+        .then(r => {
+            if(!r.ok) throw new Error("failed");
+            status.style.color = "#f5b51b";
+            status.textContent = "Posted! Thank you 🙏";
+            document.getElementById("commentText").value = "";
+            document.getElementById("commentName").value = "";
+            loadComments();
+        })
+        .catch(()=>{
+            status.style.color = "#ff6666";
+            status.textContent = "Something went wrong, try again.";
+        });
+    });
+
+    loadComments();
+
+
+    /* =========================
        ACTIVE NAVIGATION
     ========================= */
 
@@ -1637,4 +1791,4 @@
 </script>
 
 </body>
-                    </html>
+</html>

@@ -132,7 +132,7 @@
             overflow: hidden;
             background: 
                 linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
-                url("1789042915574.png") center center / cover no-repeat;
+                url("wp8971714-desk-setup-wallpapers.jpg") center center / cover no-repeat;
         }
 
         .home-content {
@@ -692,10 +692,13 @@
            CONTACT
         ========================= */
 
-        #contact {
-            background: #030303;
-            overflow: hidden;
-        }
+    
+            #contact {
+    background: 
+        linear-gradient(rgba(3,3,3,0.75), rgba(3,3,3,0.92)),
+        url("1789042915574.png") center center / cover no-repeat;
+    overflow: hidden;
+            }
 
         #contact .section-title {
             position: relative;
@@ -1283,8 +1286,7 @@
 
                 <div class="skill-icon">
 
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft-excel/microsoft-excel-original.svg" alt="Excel">
-
+                    <img src="https://cdn.simpleicons.org/microsoftexcel/207245" alt="Excel">
                 </div>
 
                 <h3>Excel</h3>
@@ -1495,8 +1497,9 @@
 
             <div class="stat-card">
 
-                <div class="stat-number">
-                    3
+                <div class="stat-number" id="projectsCount">
+                    
+    3
                 </div>
 
                 <div class="stat-label">
@@ -1610,7 +1613,7 @@
             <div class="contact-card">
 
                 <div class="contact-icon">
-                    in
+    <img src="https://cdn.simpleicons.org/linkedin/f5b51b" alt="LinkedIn" style="width:22px;height:22px;">
                 </div>
 
                 <h4>LinkedIn</h4>
@@ -1626,34 +1629,21 @@
         </div>
 
 
-        <div class="social-links">
+ <div class="social-links">
 
-            <a
-                href="https://www.linkedin.com/in/shahd-waez-3067533ba/"
-                target="_blank"
-                title="LinkedIn">
-                in
-            </a>
+    <a href="https://www.linkedin.com/in/shahd-waez-3067533ba/" target="_blank" title="LinkedIn">
+        <img src="https://cdn.simpleicons.org/linkedin/f5b51b" alt="LinkedIn" style="width:18px;height:18px;">
+    </a>
 
+    <a href="https://www.facebook.com/profile.php?id=61579408673305" target="_blank" title="Facebook">
+        <img src="https://cdn.simpleicons.org/facebook/f5b51b" alt="Facebook" style="width:18px;height:18px;">
+    </a>
 
-            <a
-                href="https://www.facebook.com/profile.php?id=61579408673305"
-                target="_blank"
-                title="Facebook">
-                f
-            </a>
+    <a href="https://github.com/shahdwaez075-commits/portfolio" target="_blank" title="GitHub">
+        <img src="https://cdn.simpleicons.org/github/f5b51b" alt="GitHub" style="width:18px;height:18px;">
+    </a>
 
-
-            <a
-                href="https://github.com/shahdwaez075-commits/portfolio"
-                target="_blank"
-                title="GitHub">
-                Git
-            </a>
-
-        </div>
-
-    </div>
+ </div>
 
 </section>
 
@@ -1740,6 +1730,8 @@
 
 
     typeEffect();
+    document.getElementById("projectsCount").textContent =
+    document.querySelectorAll(".project-card").length;
 
 
     /* =========================

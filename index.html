@@ -1261,4 +1261,352 @@
             <div class="stat-card">
 
                 <div class="stat-icon">
-                    <svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1
+                    <svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"></path></svg>
+                </div>
+
+                <div class="stat-number" id="projectsCount">
+                    5
+                </div>
+
+                <div class="stat-label">
+                    Projects
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    <svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"></path><path d="M6 12v5c0 1.5 2.5 3 6 3s6-1.5 6-3v-5"></path></svg>
+                </div>
+
+                <div class="stat-number">
+                    2028
+                </div>
+
+                <div class="stat-label">
+                    Expected Graduation
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Contact Me</h2>
+
+            <p>
+                Below are the details to reach out to me.
+            </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    📍
+                </div>
+
+                <h4>Address</h4>
+
+                <p>
+                    Cairo, Egypt
+                </p>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    ☎
+                </div>
+
+                <h4>Contact Number</h4>
+
+                <a href="tel:+2001151303384">
+                    +20 01151303384
+                </a>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    💬
+                </div>
+
+                <h4>WhatsApp</h4>
+
+                <a href="https://wa.me/2001151303384" target="_blank">
+                    +20 01151303384
+                </a>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    ✉
+                </div>
+
+                <h4>Email Address</h4>
+
+                <a href="mailto:shahdwaez075@gmail.com">
+                    shahdwaez075@gmail.com
+                </a>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/linkedin.svg" alt="LinkedIn" style="width:22px;height:22px;">
+                </div>
+
+                <h4>LinkedIn</h4>
+
+                <a
+                    href="https://www.linkedin.com/in/shahd-waez-3067533ba/"
+                    target="_blank">
+                    View Profile
+                </a>
+
+            </div>
+
+        </div>
+
+
+ <div class="social-links">
+
+    <a href="https://www.linkedin.com/in/shahd-waez-3067533ba/" target="_blank" title="LinkedIn">
+        <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/linkedin.svg" alt="LinkedIn" style="width:18px;height:18px;">
+    </a>
+
+    <a href="https://www.facebook.com/profile.php?id=61579408673305" target="_blank" title="Facebook">
+        <img src="https://cdn.simpleicons.org/facebook/f5b51b" alt="Facebook" style="width:18px;height:18px;">
+    </a>
+
+    <a href="https://github.com/shahdwaez075-commits/portfolio" target="_blank" title="GitHub">
+        <img src="https://cdn.simpleicons.org/github/f5b51b" alt="GitHub" style="width:18px;height:18px;">
+    </a>
+
+ </div>
+
+ <div class="rating-box">
+    <h4>Rate this portfolio</h4>
+    <div class="stars" id="starRow">
+        <span data-v="1">★</span>
+        <span data-v="2">★</span>
+        <span data-v="3">★</span>
+        <span data-v="4">★</span>
+        <span data-v="5">★</span>
+    </div>
+    <div class="rating-result" id="ratingResult">Loading ratings...</div>
+    <div class="rating-thanks" id="ratingThanks">Thank you for your feedback! 🙏</div>
+ </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    © 2026
+    <span>Shahd Zakaria Abdelrahman Waez</span>.
+    All Rights Reserved.
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+    const words = [
+        "Data Analyst",
+        "Power BI Analyst",
+        "Data Enthusiast"
+    ];
+
+    let wordIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    const typingElement =
+        document.getElementById("typing-text");
+
+
+    function typeEffect() {
+
+        const currentWord = words[wordIndex];
+
+        if (!deleting) {
+
+            typingElement.textContent =
+                currentWord.substring(0, charIndex + 1);
+
+            charIndex++;
+
+            if (charIndex === currentWord.length) {
+
+                deleting = true;
+
+                setTimeout(typeEffect, 1800);
+
+                return;
+            }
+
+        } else {
+
+            typingElement.textContent =
+                currentWord.substring(0, charIndex - 1);
+
+            charIndex--;
+
+            if (charIndex === 0) {
+
+                deleting = false;
+
+                wordIndex++;
+
+                if (wordIndex === words.length) {
+                    wordIndex = 0;
+                }
+
+            }
+
+        }
+
+        setTimeout(
+            typeEffect,
+            deleting ? 60 : 100
+        );
+    }
+
+
+    typeEffect();
+    document.getElementById("projectsCount").textContent =
+    document.querySelectorAll(".project-card").length;
+
+
+    /* =========================
+       RATING WIDGET
+    ========================= */
+
+    const DB_URL = "https://shahd-portfolio-default-rtdb.firebaseio.com";
+
+    function loadRatings(){
+        fetch(DB_URL + "/ratings.json")
+            .then(r => r.json())
+            .then(data => {
+                const result = document.getElementById("ratingResult");
+                if(!data){
+                    result.textContent = "Be the first to rate!";
+                    return;
+                }
+                const values = Object.values(data).map(r => r.stars);
+                const avg = values.reduce((a,b)=>a+b,0) / values.length;
+                result.textContent = "⭐ " + avg.toFixed(1) + " out of 5 (" + values.length + " ratings)";
+            })
+            .catch(()=>{
+                document.getElementById("ratingResult").textContent = "Be the first to rate!";
+            });
+    }
+
+    document.querySelectorAll("#starRow span").forEach(star=>{
+        star.addEventListener("click", ()=>{
+            const val = parseInt(star.dataset.v);
+
+            document.querySelectorAll("#starRow span").forEach(s=>{
+                s.classList.toggle("active", parseInt(s.dataset.v) <= val);
+            });
+
+            fetch(DB_URL + "/ratings.json", {
+                method: "POST",
+                body: JSON.stringify({stars: val, ts: Date.now()})
+            }).then(()=>{
+                document.getElementById("ratingThanks").style.display = "block";
+                loadRatings();
+            });
+        });
+    });
+
+    loadRatings();
+
+
+    /* =========================
+       ACTIVE NAVIGATION
+    ========================= */
+
+    const sections =
+        document.querySelectorAll("section[id]");
+
+    const navLinks =
+        document.querySelectorAll(".nav-links a");
+
+
+    window.addEventListener("scroll", () => {
+
+        let current = "";
+
+        sections.forEach(section => {
+
+            const sectionTop =
+                section.offsetTop - 120;
+
+            if (scrollY >= sectionTop) {
+                current = section.getAttribute("id");
+            }
+
+        });
+
+
+        navLinks.forEach(link => {
+
+            link.classList.remove("active");
+
+            if (
+                link.getAttribute("href") ===
+                "#" + current
+            ) {
+
+                link.classList.add("active");
+
+            }
+
+        });
+
+    });
+
+</script>
+
+</body>
+</html>

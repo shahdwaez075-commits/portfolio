@@ -642,9 +642,13 @@
 
         .rating-thanks {
             color: var(--gold);
-            font-size: 13px;
+            font-size: 12px;
             margin-top: 8px;
             display: none;
+            max-width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+            word-break: break-word;
         }
 
 
@@ -1425,7 +1429,7 @@
         <span data-v="5">★</span>
     </div>
     <div class="rating-result" id="ratingResult">Loading ratings...</div>
-    <div class="rating-thanks" id="ratingThanks">Thank you for your feedback! 🙏</div>
+    <div class="rating-thanks" id="ratingThanks"></div>
  </div>
 
 </section>
@@ -1518,7 +1522,7 @@
 
 
     /* =========================
-       RATING WIDGET
+       RATING WIDGET (with diagnostics)
     ========================= */
 
     const DB_URL = "https://shahd-portfolio-default-rtdb.firebaseio.com";
@@ -1542,8 +1546,8 @@
                 const avg = values.reduce((a,b)=>a+b,0) / values.length;
                 result.textContent = "⭐ " + avg.toFixed(1) + " out of 5 (" + values.length + " ratings)";
             })
-            .catch(()=>{
-                document.getElementById("ratingResult").textContent = "Be the first to rate!";
+            .catch(err=>{
+                document.getElementById("ratingResult").textContent = "Load error: " + err.message;
             });
     }
 
@@ -1555,12 +1559,30 @@
                 s.classList.toggle("active", parseInt(s.dataset.v) <= val);
             });
 
+            const thanksBox = document.getElementById("ratingThanks");
+            thanksBox.style.display = "block";
+            thanksBox.style.color = "#f5b51b";
+            thanksBox.textContent = "Saving...";
+
             fetch(DB_URL + "/ratings.json", {
                 method: "POST",
+                headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({stars: val, ts: Date.now()})
-            }).then(()=>{
-                document.getElementById("ratingThanks").style.display = "block";
+            })
+            .then(async (r) => {
+                const text = await r.text();
+                if(!r.ok){
+                    thanksBox.style.color = "#ff6666";
+                    thanksBox.textContent = "Save failed (" + r.status + "): " + text;
+                    return;
+                }
+                thanksBox.style.color = "#f5b51b";
+                thanksBox.textContent = "Thank you for your feedback! 🙏";
                 loadRatings();
+            })
+            .catch(err=>{
+                thanksBox.style.color = "#ff6666";
+                thanksBox.textContent = "Network error: " + err.message;
             });
         });
     });
@@ -1615,4 +1637,4 @@
 </script>
 
 </body>
-    </html>
+                    </html>
